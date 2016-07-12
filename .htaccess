@@ -114,6 +114,11 @@
     # Use expires far in the future for css and javascript because Pagekit uses filenames to break the cache
     ExpiresByType text/css                "access plus 1 year"
     ExpiresByType application/javascript  "access plus 1 year"
+
+    #Add images and fonts to browser cache
+     <filesmatch ".(jpg|jpeg|gif|png|ico|woff|woff2)$">
+            ExpiresDefault "access plus 1 month"
+        </filesmatch>
 </IfModule>
 
 # Avoid PHP 5.6 deprecated $HTTP_RAW_POST_DATA warnings
